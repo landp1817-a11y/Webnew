@@ -122,6 +122,68 @@ p {
 .card:hover {
     box-shadow: 0 30px 55px rgba(0,0,0,0.4);
 }
+/* تنسيق مشغل SoundCloud بشكل أنيق */
+.soundcloud-wrapper {
+    margin: 15px 0;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.3s ease;
+}
+
+.soundcloud-wrapper:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+}
+
+.soundcloud-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.soundcloud-icon {
+    font-size: 12px;
+    animation: pulse 1.5s ease infinite;
+}
+
+.soundcloud-title {
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0.9;
+    flex: 1;
+}
+
+.soundcloud-live {
+    font-size: 8px;
+    background: #ff4444;
+    padding: 2px 6px;
+    border-radius: 20px;
+    animation: blink 1.5s ease infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; background: #ff6666; }
+}
+
+.soundcloud-player iframe {
+    display: block;
+    width: 100%;
+    height: 100px;
+    border: none;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
 </style>
 
 </head>
@@ -139,12 +201,18 @@ p {
         <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="telegram"></a>
     </div>
     <div class="small-note">✨ follow for more ✨</div>
+<div class="soundcloud-wrapper">
+    <div class="soundcloud-header">
+        <span class="soundcloud-icon">🎵</span>
+        <span class="soundcloud-title">Tare2 - Master</span>
+        <span class="soundcloud-live">● LIVE</span>
     </div>
-        <div class="sound-player">
-        <iframe width="100%" height="166" scrolling="no" frameborder="no" 
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/YOUR_TRACK_URL&color=2f5f5f&auto_play=false&hide_related=true">
+    <div class="soundcloud-player">
+        <iframe width="100%" height="100" scrolling="no" frameborder="no" 
+        src="https://w.soundcloud.com/player/?url=https://soundcloud.com/ma3azef/tare2-master&color=2f5f5f&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false">
         </iframe>
     </div>
+</div>
 </div>
     
 
