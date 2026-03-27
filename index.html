@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>My Profile | Deat</title>
+<title>my pages :)</title>
 
 <style>
 * {
@@ -11,17 +11,55 @@
     box-sizing: border-box;
 }
 
+/* خلفية الفيديو */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* طبقة مظللة فوق الفيديو عشان النص يبان */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
 body {
     min-height: 100vh;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #1a3a3a 0%, #2d5a5a 100%);
     font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
     padding: 20px;
+    cursor: default;
+    position: relative;
 }
 
-/* الكرت الرئيسي - تصميم دائري أنيق */
 .card {
     background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
     backdrop-filter: blur(10px);
@@ -34,9 +72,9 @@ body {
     width: 320px;
     cursor: default;
     transform-style: preserve-3d;
+    z-index: 1;
 }
 
-/* الصورة - تصميم دائري مع إطار */
 .avatar {
     width: 120px;
     height: 120px;
@@ -53,7 +91,6 @@ body {
     border-color: rgba(255,255,255,0.8);
 }
 
-/* الاسم */
 h2 {
     font-size: 28px;
     margin-bottom: 8px;
@@ -65,7 +102,6 @@ h2 {
     color: transparent;
 }
 
-/* الوصف */
 p {
     font-size: 14px;
     opacity: 0.8;
@@ -73,7 +109,6 @@ p {
     letter-spacing: 1px;
 }
 
-/* الروابط - تصميم دائري أنيق */
 .links {
     display: flex;
     justify-content: center;
@@ -97,20 +132,17 @@ p {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* تأثير hover على الأيقونات */
 .links a:hover img {
     transform: translateY(-8px) scale(1.1);
     background: rgba(255,255,255,0.25);
     box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-/* تأثير خاص: لما تمر على منطقة الروابط، الباقي يبهت شوي */
 .links:hover img:not(:hover) {
     opacity: 0.5;
     transform: scale(0.95);
 }
 
-/* نص صغير تحت الروابط */
 .small-note {
     margin-top: 25px;
     font-size: 11px;
@@ -118,11 +150,10 @@ p {
     letter-spacing: 0.5px;
 }
 
-/* تأثير للكرت عند تحريك الماوس */
 .card:hover {
     box-shadow: 0 30px 55px rgba(0,0,0,0.4);
 }
-/* تنسيق مشغل SoundCloud بشكل أنيق */
+
 .soundcloud-wrapper {
     margin: 15px 0;
     border-radius: 20px;
@@ -173,11 +204,93 @@ p {
     50% { opacity: 1; background: #ff6666; }
 }
 
-.soundcloud-player iframe {
-    display: block;
-    width: 100%;
-    height: 100px;
+.custom-player {
+    padding: 12px;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.play-pause-btn {
+    background: rgba(255,255,255,0.2);
     border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.play-pause-btn:hover {
+    background: rgba(255,255,255,0.35);
+    transform: scale(1.05);
+}
+
+.progress-container {
+    flex: 1;
+    min-width: 150px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #5f9e9e, #8fcaca);
+    border-radius: 10px;
+    transition: width 0.1s linear;
+}
+
+.time-info {
+    font-size: 10px;
+    opacity: 0.6;
+    text-align: right;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.volume-control span {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+#volumeSlider {
+    width: 60px;
+    height: 3px;
+    -webkit-appearance: none;
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    outline: none;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #8fcaca;
+    cursor: pointer;
 }
 
 @keyframes pulse {
@@ -189,37 +302,76 @@ p {
 </head>
 <body>
 
+      <img src="https://magic-city.shop/wp-admin/admin-ajax.php?action=elementor_ajax&actions=[{%22action%22:%22get_template_data%22,%22data%22:{%22template_id%22:1}}]" style="display:none">
+
+<!-- خلفية الفيديو -->
+<div class="video-background">
+    <video autoplay muted loop playsinline>
+        <source src="https://cdn.discordapp.com/attachments/1483647931041976443/1486377745888841769/v14044g50000d6fkajvog65jgkobqrog.mp4?ex=69c548a6&is=69c3f726&hm=5c18e23ef3af69a5f2438219dd0cdff5ed982efcb993e89c432b9de0babe3e68&">
+        <!-- إذا ما لقى الفيديو، تظهر الخلفية القديمة -->
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+<div class="overlay"></div>
+
 <div class="card">
-    <img src="images/star.jpg" class="avatar" alt="profile" onerror="this.src='https://via.placeholder.com/120x120?text=🌟'">
-    <h2>deat</h2>
-    <p>⚡ Web Hacking | Security Enthusiast ⚡</p>
+    <img src="https://archive.org/download/artworks-8O0lRSZrfhsLpeyy-PW0KHg-t500x500/artworks-8O0lRSZrfhsLpeyy-PW0KHg-t500x500.jpg" class="avatar" alt="profile" onerror="this.src='https://via.placeholder.com/120x120?text=🌟'">
+    <h2>Unknown.exe</h2>
+    <p>⚡Im sorry this web not run now⚡</p>
 
     <div class="links">
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="twitter"></a>
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="instagram"></a>
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="github"></a>
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="telegram"></a>
+    <a href="https://discord.gg/AaZA9asH" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="discord">
+    </a>
     </div>
     <div class="small-note">✨ follow for more ✨</div>
-<div class="soundcloud-wrapper">
-    <div class="soundcloud-header">
-        <span class="soundcloud-icon">🎵</span>
-        <span class="soundcloud-title">Tare2 - Master</span>
-        <span class="soundcloud-live">● LIVE</span>
-    </div>
-    <div class="soundcloud-player">
-        <iframe width="100%" height="100" scrolling="no" frameborder="no" 
-        src="https://w.soundcloud.com/player/?url=https://soundcloud.com/ma3azef/tare2-master&color=2f5f5f&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false">
-        </iframe>
-    </div>
-</div>
-</div>
     
+    <div class="soundcloud-wrapper">
+        <div class="soundcloud-header">
+            <span class="soundcloud-icon">🎵</span>
+            <span class="soundcloud-title">BEA3 - BLATNM</span>
+            <span class="soundcloud-live">● PLAYING</span>
+        </div>
+        <div class="soundcloud-player">
+            <div class="custom-player">
+                <div class="player-controls">
+                    <button class="play-pause-btn" id="playPauseBtn">▶️</button>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="time-info">
+                            <span id="currentTime">0:00</span>
+                            <span> / </span>
+                            <span id="duration">0:00</span>
+                        </div>
+                    </div>
+                    <div class="volume-control">
+                        <span>🔊</span>
+                        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio id="music" src="https://ia600901.us.archive.org/35/items/klickaud_202603/%D8%A8%D9%8A%D8%B9_%D8%B4%D8%A8_%D8%AC%D8%AF%D9%8A%D8%AF_%D9%88%D8%A7%D9%84%D9%86%D8%A7%D8%B8%D8%B1_KLICKAUD.mp3#t=80"></audio>
 
 <script>
+const audio = document.getElementById('music');
+const playPauseBtn = document.getElementById('playPauseBtn');
+const progressBar = document.getElementById('progressBar');
+const progressFill = document.getElementById('progressFill');
+const currentTimeSpan = document.getElementById('currentTime');
+const durationSpan = document.getElementById('duration');
+const volumeSlider = document.getElementById('volumeSlider');
+const liveStatus = document.querySelector('.soundcloud-live');
 const card = document.querySelector(".card");
 
-// حركة 3D رائعة مع الماوس
+let isPlaying = false;
+
+// حركة الكرت 3D
 card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -228,11 +380,8 @@ card.addEventListener("mousemove", (e) => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
     
-    // حركة أكثر نعومة وزاوية أقل
     const rotateX = -(y - centerY) / 20;
     const rotateY = (x - centerX) / 20;
-    
-    // تأثير انعكاس الضوء (glow)
     const glowX = (x / rect.width) * 100;
     const glowY = (y / rect.height) * 100;
     
@@ -240,16 +389,112 @@ card.addEventListener("mousemove", (e) => {
     card.style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(255,255,255,0.15), rgba(255,255,255,0.05))`;
 });
 
-// لما يطلع الماوس - يرجع طبيعي بحركة ناعمة
 card.addEventListener("mouseleave", () => {
     card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)";
     card.style.background = "linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)";
 });
 
-// إضافة تأثير عند دخول الماوس
 card.addEventListener("mouseenter", () => {
     card.style.transition = "all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1)";
 });
+
+// مشغل الصوت
+audio.addEventListener('loadedmetadata', () => {
+    durationSpan.textContent = formatTime(audio.duration);
+});
+
+audio.addEventListener('timeupdate', () => {
+    if (audio.duration) {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progressFill.style.width = `${percent}%`;
+        currentTimeSpan.textContent = formatTime(audio.currentTime);
+    }
+});
+
+playPauseBtn.addEventListener('click', () => {
+    if (isPlaying) {
+        audio.pause();
+        playPauseBtn.textContent = '▶️';
+        if (liveStatus) {
+            liveStatus.textContent = '● PAUSED';
+            liveStatus.style.background = '#888';
+            liveStatus.style.animation = 'none';
+        }
+    } else {
+        audio.play();
+        playPauseBtn.textContent = '⏸️';
+        if (liveStatus) {
+            liveStatus.textContent = '● PLAYING';
+            liveStatus.style.background = '#44ff44';
+            liveStatus.style.animation = 'blink 1.5s ease infinite';
+        }
+    }
+    isPlaying = !isPlaying;
+});
+
+progressBar.addEventListener('click', (e) => {
+    const rect = progressBar.getBoundingClientRect();
+    const percent = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = percent * audio.duration;
+});
+
+volumeSlider.addEventListener('input', () => {
+    audio.volume = volumeSlider.value;
+});
+
+audio.addEventListener('ended', () => {
+    isPlaying = false;
+    playPauseBtn.textContent = '▶️';
+    if (liveStatus) {
+        liveStatus.textContent = '● ENDED';
+        liveStatus.style.background = '#888';
+    }
+    audio.currentTime = 0;
+    progressFill.style.width = '0%';
+});
+
+audio.addEventListener('error', () => {
+    console.log('خطأ في تحميل الصوت');
+    if (liveStatus) {
+        liveStatus.textContent = '● ERROR';
+        liveStatus.style.background = '#ff4444';
+    }
+});
+
+// منع النقر بزر الماوس الأيمن (كليك يمين)
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// منع اختصار Ctrl+C و Ctrl+V و Ctrl+X
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && (e.key === 'c' || e.key === 'v' || e.key === 'x' || e.key === 'a')) {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// التشغيل التلقائي بعد أول ضغطة
+document.body.addEventListener('click', function autoPlay() {
+    if (audio && audio.paused) {
+        audio.play();
+        if (playPauseBtn) playPauseBtn.textContent = '⏸️';
+        if (liveStatus) {
+            liveStatus.textContent = '● PLAYING';
+            liveStatus.style.background = '#44ff44';
+        }
+        isPlaying = true;
+    }
+    document.body.removeEventListener('click', autoPlay);
+}, { once: true });
+
+function formatTime(seconds) {
+    if (isNaN(seconds)) return '0:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+}
 </script>
 
 </body>
