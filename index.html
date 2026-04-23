@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Unknown.exe</title>
+<title>Unknown.exe · visitor tracker</title>
 <style>
 * {
     margin: 0;
@@ -32,10 +32,10 @@
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    filter: brightness(0.85) contrast(1.1);
+    filter: brightness(0.85) contrast(1.08);
 }
 
-/* طبقة مظللة متطورة */
+/* طبقة داكنة أنيقة */
 .overlay {
     position: fixed;
     top: 0;
@@ -62,35 +62,35 @@ body {
     position: relative;
 }
 
-/* بطاقة فائقة الجودة */
+/* البطاقة الرئيسية - تصميم فاخر */
 .card {
-    background: linear-gradient(135deg, rgba(20, 22, 37, 0.65) 0%, rgba(10, 12, 28, 0.55) 100%);
-    backdrop-filter: blur(16px);
-    border-radius: 48px;
+    background: linear-gradient(135deg, rgba(20, 22, 37, 0.7) 0%, rgba(10, 12, 28, 0.6) 100%);
+    backdrop-filter: blur(18px);
+    border-radius: 52px;
     padding: 38px 28px;
     text-align: center;
     color: white;
-    box-shadow: 0 30px 50px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.12);
+    box-shadow: 0 30px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.12);
     transition: all 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.2);
-    width: 360px;
+    width: 380px;
     cursor: default;
     transform-style: preserve-3d;
     z-index: 10;
-    border: 1px solid rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
 .card:hover {
-    box-shadow: 0 35px 65px rgba(0,0,0,0.5);
-    border-color: rgba(255,255,255,0.3);
+    box-shadow: 0 35px 65px rgba(0,0,0,0.6);
+    border-color: rgba(255,215,150,0.4);
 }
 
 .avatar {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     object-fit: cover;
-    border: 3px solid rgba(255,215,150,0.6);
+    border: 3px solid rgba(255,215,150,0.7);
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     transition: all 0.4s ease;
 }
@@ -98,39 +98,95 @@ body {
 .avatar:hover {
     transform: scale(1.05) rotate(2deg);
     border-color: #ffdd99;
-    box-shadow: 0 20px 35px rgba(0,0,0,0.4);
 }
 
 h2 {
     font-size: 32px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     letter-spacing: 1.5px;
     font-weight: 700;
-    background: linear-gradient(135deg, #FFFFFF, #E0E4FF, #B0C4DE);
+    background: linear-gradient(135deg, #FFFFFF, #E0E4FF, #F5C574);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-p {
-    font-size: 14px;
-    opacity: 0.85;
-    margin-bottom: 20px;
-    letter-spacing: 0.7px;
+.tagline {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-bottom: 22px;
+    letter-spacing: 0.6px;
     font-weight: 500;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.4);
     display: inline-block;
-    padding: 4px 14px;
+    padding: 5px 16px;
     border-radius: 40px;
     backdrop-filter: blur(4px);
+}
+
+/* COUNTER SECTION - عداد الزوار المميز */
+.visitor-counter {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(12px);
+    border-radius: 60px;
+    padding: 10px 18px;
+    margin: 5px 0 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    border: 1px solid rgba(255,215,150,0.4);
+    transition: all 0.3s;
+    width: auto;
+}
+
+.visitor-counter:hover {
+    background: rgba(0,0,0,0.6);
+    border-color: #ffdd99;
+    transform: scale(1.02);
+}
+
+.counter-icon {
+    font-size: 24px;
+    filter: drop-shadow(0 0 3px gold);
+}
+
+.counter-text {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: linear-gradient(120deg, #f9f3d9, #ffe0a3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.counter-number {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FFD966, #FFB347);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: 'Monaco', monospace;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px rgba(255,180,60,0.5);
+    direction: ltr;
+    display: inline-block;
+    min-width: 70px;
+}
+
+.counter-label {
+    font-size: 11px;
+    opacity: 0.8;
+    margin-left: 5px;
 }
 
 .links {
     display: flex;
     justify-content: center;
     gap: 24px;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 .links a {
@@ -147,33 +203,24 @@ p {
     padding: 12px;
     transition: all 0.3s ease;
     box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 .links a:hover img {
     transform: translateY(-8px) scale(1.08);
     background: rgba(255,255,255,0.28);
-    box-shadow: 0 15px 28px rgba(0,0,0,0.3);
-}
-
-.links:hover img:not(:hover) {
-    opacity: 0.6;
-    transform: scale(0.94);
 }
 
 .small-note {
-    margin-top: 24px;
-    font-size: 11px;
-    opacity: 0.7;
-    letter-spacing: 0.8px;
-    font-weight: 300;
+    margin-top: 18px;
+    font-size: 10px;
+    opacity: 0.6;
 }
 
-/* صندوق الصوت البراق */
+/* صندوق الصوت الحديث */
 .soundcloud-wrapper {
-    margin: 22px 0 10px;
-    border-radius: 32px;
-    background: rgba(15, 20, 35, 0.6);
+    margin: 20px 0 5px;
+    border-radius: 36px;
+    background: rgba(15, 20, 35, 0.65);
     backdrop-filter: blur(12px);
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.2);
@@ -181,8 +228,8 @@ p {
 }
 
 .soundcloud-wrapper:hover {
-    background: rgba(25, 32, 55, 0.7);
-    border-color: rgba(255,215,150,0.5);
+    background: rgba(25, 32, 55, 0.75);
+    border-color: rgba(255,215,150,0.6);
     transform: translateY(-3px);
 }
 
@@ -206,7 +253,6 @@ p {
     opacity: 0.95;
     flex: 1;
     text-align: left;
-    letter-spacing: 0.5px;
     font-family: monospace;
 }
 
@@ -217,6 +263,7 @@ p {
     border-radius: 60px;
     font-weight: bold;
     box-shadow: 0 0 5px rgba(255,80,80,0.6);
+    transition: 0.2s;
 }
 
 @keyframes subtlePulse {
@@ -225,13 +272,13 @@ p {
 }
 
 .custom-player {
-    padding: 16px 14px;
+    padding: 14px 14px;
 }
 
 .player-controls {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
@@ -243,14 +290,12 @@ p {
     height: 44px;
     cursor: pointer;
     font-size: 20px;
-    transition: all 0.2s ease;
+    transition: 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    backdrop-filter: blur(8px);
     color: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    backdrop-filter: blur(8px);
 }
 
 .play-pause-btn:hover {
@@ -261,7 +306,7 @@ p {
 
 .progress-container {
     flex: 1;
-    min-width: 150px;
+    min-width: 140px;
 }
 
 .progress-bar {
@@ -271,20 +316,14 @@ p {
     border-radius: 10px;
     cursor: pointer;
     margin-bottom: 6px;
-    transition: height 0.1s;
-}
-
-.progress-bar:hover {
-    height: 7px;
 }
 
 .progress-fill {
     width: 0%;
     height: 100%;
-    background: linear-gradient(90deg, #F5C574, #FFB347, #E59866);
+    background: linear-gradient(90deg, #F5C574, #FFB347);
     border-radius: 10px;
     transition: width 0.1s linear;
-    box-shadow: 0 0 5px #ffb347;
 }
 
 .time-info {
@@ -292,22 +331,15 @@ p {
     opacity: 0.75;
     text-align: right;
     font-family: monospace;
-    letter-spacing: 0.5px;
 }
 
 .volume-control {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex-shrink: 0;
-    background: rgba(0,0,0,0.25);
+    background: rgba(0,0,0,0.3);
     padding: 4px 10px;
     border-radius: 40px;
-}
-
-.volume-control span {
-    font-size: 13px;
-    opacity: 0.8;
 }
 
 #volumeSlider {
@@ -316,7 +348,6 @@ p {
     -webkit-appearance: none;
     background: rgba(255,255,255,0.3);
     border-radius: 5px;
-    outline: none;
 }
 
 #volumeSlider::-webkit-slider-thumb {
@@ -326,56 +357,32 @@ p {
     border-radius: 50%;
     background: #FFD966;
     cursor: pointer;
-    box-shadow: 0 0 4px gold;
 }
 
-/* أنيميشن وامض live */
 @keyframes blinkLive {
     0% { opacity: 0.6; background: #ff5e5e; }
     50% { opacity: 1; background: #ff8c8c; box-shadow: 0 0 8px red; }
     100% { opacity: 0.6; background: #ff5e5e; }
 }
 
-.live-blink {
+.live-active {
     animation: blinkLive 1.2s infinite ease;
 }
 
-/* تأثير بصري إضافي */
-.card::before {
-    content: '';
-    position: absolute;
-    top: -2%;
-    left: -2%;
-    width: 104%;
-    height: 104%;
-    background: radial-gradient(ellipse at center, rgba(255,215,150,0.1), transparent);
-    border-radius: 52px;
-    z-index: -1;
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-/* تحسين التجاوب */
-@media (max-width: 480px) {
+@media (max-width: 500px) {
     .card {
-        width: 92%;
+        width: 95%;
         padding: 28px 18px;
     }
-    .player-controls {
-        gap: 10px;
-    }
-    .progress-container {
-        min-width: 110px;
-    }
-    .volume-control {
-        padding: 2px 6px;
+    .counter-number {
+        font-size: 28px;
     }
 }
 </style>
 </head>
 <body>
 
-<!-- خلفية فيديو سينمائية جذابة -->
+<!-- خلفية الفيديو -->
 <div class="video-background">
     <video autoplay muted loop playsinline preload="auto">
         <source src="https://archive.org/download/shabjdeed-al-nather-tal-abib-official-video/Shabjdeed%20%26%20Al%20Nather%20-%20Tal%20Abib%20%5BOfficial%20Video%5D%20%D8%B4%D8%A8%20%D8%AC%D8%AF%D9%8A%D8%AF%20%D9%88%D8%A7%D9%84%D9%86%D8%A7%D8%B8%D8%B1%20-%20%D8%AA%D9%84%20%D8%A3%D8%A8%D9%8A%D8%A8.mp4">
@@ -386,20 +393,24 @@ p {
 <div class="card">
     <img src="https://archive.org/download/artworks-8O0lRSZrfhsLpeyy-PW0KHg-t500x500/artworks-8O0lRSZrfhsLpeyy-PW0KHg-t500x500.jpg" class="avatar" alt="avatar" onerror="this.src='https://archive.org/download/artworks-8O0lRSZrfhsLpeyy-PW0KHg-t500x500/artworks-8O0lRSZrfhsLpeyy-PW0KHg-t500x500.jpg'">
     <h2>Unknown.exe</h2>
-    <p>⚡ لا للستغلال ⚡</p>
+    <div class="tagline">⚡HACKING THIS WEB & EROR 404:) ⚡</div>
+
+    <!-- عداد الزوار الحيوي + تأثير تفاعلي -->
+    <div class="visitor-counter" id="visitorCounterBox">
+        <span class="counter-icon">👁️</span>
+        <span class="counter-text"></span>
+        <span class="counter-number" id="viewerCount">--</span>
+        <span class="counter-label">Viewer</span>
+    </div>
 
     <div class="links">
         <a href="https://discord.gg/AaZA9asH" target="_blank" rel="noopener noreferrer">
             <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="discord">
         </a>
-        <!-- اضافة ايقونة ثانية جاذبة -->
-        <a href="#" target="_blank" rel="noopener noreferrer" id="mysticBtn">
-            <img src="https://cdn-icons-png.flaticon.com/512/1051/1051322.png" alt="mystic">
-        </a>
     </div>
-    <div class="small-note">✨ تابعنا للمزيد ✨</div>
+    <div class="small-note">✨FOLOW TO MORE HACKING ✨</div>
     
-    <!-- واجهة الصوت المتطورة -->
+    <!-- مشغل الصوت المتطور -->
     <div class="soundcloud-wrapper">
         <div class="soundcloud-header">
             <span class="soundcloud-icon">🎧</span>
@@ -428,14 +439,66 @@ p {
     </div>
 </div>
 
-<!-- مصدر الصوت الاحترافي بصيغة عالية الجودة -->
 <audio id="music" preload="metadata" crossorigin="anonymous">
     <source src="https://ia600901.us.archive.org/35/items/klickaud_202603/%D8%A8%D9%8A%D8%B9_%D8%B4%D8%A8_%D8%AC%D8%AF%D9%8A%D8%AF_%D9%88%D8%A7%D9%84%D9%86%D8%A7%D8%B8%D8%B1_KLICKAUD.mp3#t=80" type="audio/mpeg">
 </audio>
 
 <script>
-(function() {
-    // ----- عناصر DOM -----
+(function(){
+    // ------------------- عداد الزوار المتقدم (localStorage + session فريد) -------------------
+    // المفتاح: حفظ عدد المشاهدات الفريد لكل متصفح/جلسة
+    let visitorCount = 0;
+    const counterElement = document.getElementById('viewerCount');
+    
+    // دالة لجلب العداد الحالي وتحديثه مع منع التكرار للجلسة نفسها
+    function initVisitorCounter() {
+        // استخدام localStorage لتخزين العدد الكلي
+        let storedTotal = localStorage.getItem('site_visitor_total');
+        if (storedTotal === null) {
+            // إذا كان اول مرة بشكل كامل
+            storedTotal = 1;
+            localStorage.setItem('site_visitor_total', storedTotal);
+        } else {
+            storedTotal = parseInt(storedTotal, 10);
+            if (isNaN(storedTotal)) storedTotal = 1;
+        }
+        
+        // منع الزيادة المتكررة لنفس الجلسة (جلسة المتصفح)
+        const sessionKey = 'visitor_session_record';
+        const hasVisitedBefore = sessionStorage.getItem(sessionKey);
+        
+        if (!hasVisitedBefore) {
+            // هذه زيارة جديدة فريدة (جلسة جديدة)
+            storedTotal = storedTotal + 1;
+            localStorage.setItem('site_visitor_total', storedTotal);
+            sessionStorage.setItem(sessionKey, 'true');
+        }
+        
+        // تحديث العدد المعروض
+        visitorCount = storedTotal;
+        if (counterElement) {
+            counterElement.innerText = visitorCount;
+            // تأثير لطيف عند تحميل العدد
+            counterElement.style.transform = "scale(1.1)";
+            setTimeout(() => { if(counterElement) counterElement.style.transform = "scale(1)"; }, 200);
+        }
+    }
+    
+    // تنفيذ العداد فورًا
+    initVisitorCounter();
+    
+    // إضافة خيار إضافي: إذا تم فتح الصفحة من رابط خارجي يمكن إضافة وهمي، كذلك الحماية من الزيادة المفرطة
+    // نضمن عدم زيادة العدد أكثر من مرة لكل جلسة تصفح
+    
+    // يمكن عمل تحديث وهمي رائع: عرض animate
+    setInterval(() => {
+        if(counterElement) {
+            counterElement.style.textShadow = "0 0 4px gold";
+            setTimeout(() => { if(counterElement) counterElement.style.textShadow = "none"; }, 300);
+        }
+    }, 8000);
+    
+    // ----- عناصر الصوت وتأثيرات 3D للبطاقة -----
     const audio = document.getElementById('music');
     const playPauseBtn = document.getElementById('playPauseBtn');
     const progressBar = document.getElementById('progressBar');
@@ -447,258 +510,198 @@ p {
     const card = document.querySelector(".card");
     
     let isPlaying = false;
-    let isAudioLoaded = false;
-
-    // ---- تأثير الكارت 3D مع تتبع الضوء المتقدم ----
+    
+    // تأثير 3D ممتاز على البطاقة
     card.addEventListener("mousemove", (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        
         const rotateX = -(y - centerY) / 22;
         const rotateY = (x - centerX) / 22;
         const glowX = (x / rect.width) * 100;
         const glowY = (y / rect.height) * 100;
-        
-        card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(12px)`;
-        card.style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(255,245,210,0.18), rgba(20,25,55,0.6))`;
+        card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+        card.style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(255,245,210,0.16), rgba(20,25,55,0.65))`;
     });
-    
     card.addEventListener("mouseleave", () => {
         card.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg) translateZ(0px)";
-        card.style.background = "linear-gradient(135deg, rgba(20, 22, 37, 0.65) 0%, rgba(10, 12, 28, 0.55) 100%)";
-        card.style.transition = "all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1)";
+        card.style.background = "linear-gradient(135deg, rgba(20, 22, 37, 0.7) 0%, rgba(10, 12, 28, 0.6) 100%)";
     });
     
-    // منع الكليك الأيمن وحماية بسيطة
+    // حماية
     document.addEventListener('contextmenu', (e) => e.preventDefault());
     document.addEventListener('keydown', (e) => {
-        if (e.ctrlKey && (e.key === 'c' || e.key === 'v' || e.key === 'x' || e.key === 'u' || e.key === 's')) {
-            e.preventDefault();
-            return false;
-        }
+        if(e.ctrlKey && (e.key === 'c' || e.key === 'v' || e.key === 'u' || e.key === 's')) e.preventDefault();
     });
     
-    // ---- دوال مساعدة ----
     function formatTime(seconds) {
-        if (isNaN(seconds) || !isFinite(seconds)) return '0:00';
+        if(isNaN(seconds) || !isFinite(seconds)) return '0:00';
         const mins = Math.floor(seconds / 60);
         const secs = Math.floor(seconds % 60);
         return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
     }
     
-    function updateLiveBadge(status) {
-        if (!liveBadge) return;
-        if (status === 'playing') {
+    function updateLiveStatus(status) {
+        if(!liveBadge) return;
+        if(status === 'playing') {
             liveBadge.textContent = '● LIVE';
             liveBadge.style.background = '#44dd66';
-            liveBadge.style.animation = 'blinkLive 1.2s infinite ease';
-            liveBadge.style.boxShadow = '0 0 8px #44ff66';
-        } else if (status === 'paused') {
+            liveBadge.classList.add('live-active');
+        } else if(status === 'paused') {
             liveBadge.textContent = '⏸ PAUSED';
             liveBadge.style.background = '#b87333';
-            liveBadge.style.animation = 'none';
-            liveBadge.style.boxShadow = 'none';
-        } else if (status === 'ended') {
-            liveBadge.textContent = '● FINISHED';
+            liveBadge.classList.remove('live-active');
+        } else if(status === 'ended') {
+            liveBadge.textContent = '● ENDED';
             liveBadge.style.background = '#777';
-            liveBadge.style.animation = 'none';
+            liveBadge.classList.remove('live-active');
         } else {
-            liveBadge.textContent = '● LOADING';
-            liveBadge.style.background = '#ffaa33';
+            liveBadge.textContent = '● LOAD';
         }
     }
     
-    // تحميل البيانات وبدء المشغل
     audio.addEventListener('loadedmetadata', () => {
-        if (audio.duration && isFinite(audio.duration)) {
+        if(audio.duration && isFinite(audio.duration)) {
             durationSpan.textContent = formatTime(audio.duration);
-            isAudioLoaded = true;
-            updateLiveBadge('paused');
         } else {
-            durationSpan.textContent = '0:00';
+            durationSpan.textContent = '3:45';
         }
     });
     
     audio.addEventListener('timeupdate', () => {
-        if (audio.duration && !isNaN(audio.duration) && audio.duration !== Infinity) {
+        if(audio.duration && !isNaN(audio.duration) && audio.duration !== Infinity) {
             const percent = (audio.currentTime / audio.duration) * 100;
             progressFill.style.width = `${percent}%`;
             currentTimeSpan.textContent = formatTime(audio.currentTime);
-        } else if (audio.currentTime) {
-            // fallback
+        } else if(audio.currentTime) {
             currentTimeSpan.textContent = formatTime(audio.currentTime);
         }
     });
     
-    // تشغيل/إيقاف
     function togglePlay() {
-        if (!audio.src || audio.readyState < 1) {
-            console.log("loading audio..");
-            audio.load();
-            setTimeout(() => {
-                if (audio.paused) audio.play().catch(e => console.log("auto needed"));
-            }, 100);
-        }
-        if (isPlaying) {
+        if(!audio.src) audio.load();
+        if(isPlaying) {
             audio.pause();
             playPauseBtn.textContent = '▶️';
-            updateLiveBadge('paused');
+            updateLiveStatus('paused');
         } else {
-            const playPromise = audio.play();
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    playPauseBtn.textContent = '⏸️';
-                    updateLiveBadge('playing');
-                }).catch(error => {
-                    console.log("Autoplay prevented, click to resume:", error);
-                    playPauseBtn.textContent = '▶️';
-                    updateLiveBadge('paused');
-                    isPlaying = false;
-                });
-            } else {
-                audio.play();
+            audio.play().then(() => {
                 playPauseBtn.textContent = '⏸️';
-                updateLiveBadge('playing');
-            }
+                updateLiveStatus('playing');
+            }).catch(() => {
+                playPauseBtn.textContent = '▶️';
+                updateLiveStatus('paused');
+                isPlaying = false;
+            });
         }
         isPlaying = !isPlaying;
     }
     
     playPauseBtn.addEventListener('click', togglePlay);
     
-    // شريط التقدم
     progressBar.addEventListener('click', (e) => {
         const rect = progressBar.getBoundingClientRect();
-        const clickX = e.clientX - rect.left;
-        const width = rect.width;
-        const percent = Math.min(1, Math.max(0, clickX / width));
-        if (audio.duration && isFinite(audio.duration)) {
+        const percent = (e.clientX - rect.left) / rect.width;
+        if(audio.duration && isFinite(audio.duration)) {
             audio.currentTime = percent * audio.duration;
         }
     });
     
-    // التحكم في الصوت
     volumeSlider.addEventListener('input', () => {
         audio.volume = parseFloat(volumeSlider.value);
     });
     audio.volume = 0.65;
     
-    // عند انتهاء المقطع
     audio.addEventListener('ended', () => {
         isPlaying = false;
         playPauseBtn.textContent = '▶️';
-        updateLiveBadge('ended');
+        updateLiveStatus('ended');
         audio.currentTime = 0;
         progressFill.style.width = '0%';
         currentTimeSpan.textContent = '0:00';
     });
     
-    audio.addEventListener('error', (e) => {
-        console.warn("Audio error occurred");
-        updateLiveBadge('⚠ ERROR');
+    audio.addEventListener('error', () => {
+        updateLiveStatus('ERROR');
         liveBadge.style.background = '#cc3333';
-        playPauseBtn.textContent = '🔁';
     });
     
-    // محاولة التشغيل التلقائي عند أول تفاعل مع الصفحة (أي click)
-    let autoplayTriggered = false;
-    function firstInteractionAutoPlay() {
-        if (!autoplayTriggered && audio.paused) {
+    // تفعيل التشغيل التلقائي عند أول تفاعل
+    let autoplayTrigger = false;
+    function firstTouchPlay() {
+        if(!autoplayTrigger && audio.paused) {
             audio.play().then(() => {
                 isPlaying = true;
                 playPauseBtn.textContent = '⏸️';
-                updateLiveBadge('playing');
-                autoplayTriggered = true;
-            }).catch(() => {
-                console.log("autoplay blocked, waiting for click");
-            });
+                updateLiveStatus('playing');
+                autoplayTrigger = true;
+            }).catch(() => {});
         }
-        document.body.removeEventListener('click', firstInteractionAutoPlay);
-        document.body.removeEventListener('touchstart', firstInteractionAutoPlay);
+        document.body.removeEventListener('click', firstTouchPlay);
+        document.body.removeEventListener('touchstart', firstTouchPlay);
     }
-    document.body.addEventListener('click', firstInteractionAutoPlay);
-    document.body.addEventListener('touchstart', firstInteractionAutoPlay);
+    document.body.addEventListener('click', firstTouchPlay);
+    document.body.addEventListener('touchstart', firstTouchPlay);
     
-    // ضمان تزامن التحديث بعد تحميل البيانات بالكامل
-    audio.addEventListener('canplaythrough', () => {
-        if (!isPlaying && !autoplayTriggered) {
-            // no force but ready
-        }
-        if (audio.duration && durationSpan.textContent === '0:00') {
-            durationSpan.textContent = formatTime(audio.duration);
-        }
-    });
-    
-    // معالجة فيديو الخلفية وجعله يبدأ من ربع المدة لتجربة غامرة
+    // فيديو الخلفية ابدأ من ربع المدة
     const bgVideo = document.querySelector('.video-background video');
-    if (bgVideo) {
+    if(bgVideo) {
         bgVideo.addEventListener('loadedmetadata', () => {
-            if (bgVideo.duration && bgVideo.duration > 5) {
-                bgVideo.currentTime = bgVideo.duration / 4;
-                bgVideo.play().catch(e => console.log("bg vid autoplay muted ok"));
-            } else {
-                bgVideo.play().catch(() => {});
-            }
+            if(bgVideo.duration && bgVideo.duration > 5) bgVideo.currentTime = bgVideo.duration / 4;
+            bgVideo.play().catch(e=>console.log("bg muted ok"));
         });
-        // تأمين إعادة التشغيل الحلقي بلا توقف
         bgVideo.addEventListener('ended', () => {
-            if (bgVideo.duration) {
-                bgVideo.currentTime = bgVideo.duration / 4;
-                bgVideo.play();
-            } else {
-                bgVideo.currentTime = 0;
-                bgVideo.play();
-            }
+            if(bgVideo.duration) bgVideo.currentTime = bgVideo.duration / 4;
+            bgVideo.play();
         });
-        // بدء تشغيل الخلفية فورًا إذا كان meta جاهز
-        if (bgVideo.readyState >= 1) {
-            bgVideo.currentTime = bgVideo.duration / 4 || 0;
+        if(bgVideo.readyState >= 1) {
+            if(bgVideo.duration) bgVideo.currentTime = bgVideo.duration / 4;
             bgVideo.play();
         }
     }
     
-    // إضافة حدث خاص لزر mystic الثاني يجعل الجو سحري
+    // زر Mystic يعطي وميض للعداد
     const mysticBtn = document.getElementById('mysticBtn');
-    if (mysticBtn) {
+    if(mysticBtn) {
         mysticBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            // تأثير بسيط: تغيير مؤقت للون البطاقة
-            card.style.transition = "all 0.2s";
-            card.style.boxShadow = "0 0 20px rgba(255,200,100,0.8)";
+            const counterDiv = document.getElementById('visitorCounterBox');
+            counterDiv.style.transform = "scale(1.02)";
+            counterDiv.style.boxShadow = "0 0 15px gold";
             setTimeout(() => {
-                card.style.boxShadow = "0 30px 50px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.12)";
+                counterDiv.style.transform = "scale(1)";
+                counterDiv.style.boxShadow = "none";
             }, 300);
-            // تغيير النص لثانية
-            const originalTitle = document.querySelector('.soundcloud-title');
-            if (originalTitle) {
-                originalTitle.style.opacity = '0.7';
-                setTimeout(() => originalTitle.style.opacity = '1', 400);
+            // تأثير صوتي وهمي: نبض على العدد
+            const numSpan = document.getElementById('viewerCount');
+            if(numSpan) {
+                numSpan.style.textShadow = "0 0 10px #ffaa33";
+                setTimeout(() => numSpan.style.textShadow = "", 400);
             }
         });
     }
     
-    // حماية إضافية للصوت ومنع الـ right click على المشغل
-    const playerContainer = document.querySelector('.custom-player');
-    if (playerContainer) playerContainer.addEventListener('contextmenu', (e) => e.preventDefault());
-    
-    // تأكد من تحديث واجهة الحجم في البداية
-    volumeSlider.value = audio.volume;
-    
-    // منع الصوت من التشويش عند بدء التشغيل التلقائي المبكر
-    if (audio.readyState === 0) {
-        audio.load();
-    }
-    
-    // تحسين عرض المدة حال تحميلها بطيء
+    // تحديث المدة إذا تأخر التحميل
     setTimeout(() => {
-        if (audio.duration && !isNaN(audio.duration) && durationSpan.textContent === '0:00') {
+        if(audio.duration && durationSpan.textContent === '0:00') {
             durationSpan.textContent = formatTime(audio.duration);
         }
-    }, 1000);
+    }, 1200);
+    
+    // إضافة تأثير تفاعلي للعداد عند hover بطاقة
+    const visitorBox = document.querySelector('.visitor-counter');
+    if(visitorBox) {
+        visitorBox.addEventListener('mouseenter', () => {
+            visitorBox.style.background = "rgba(0,0,0,0.7)";
+            visitorBox.style.borderColor = "#ffdd99";
+        });
+        visitorBox.addEventListener('mouseleave', () => {
+            visitorBox.style.background = "rgba(0, 0, 0, 0.45)";
+            visitorBox.style.borderColor = "rgba(255,215,150,0.4)";
+        });
+    }
 })();
 </script>
 </body>
